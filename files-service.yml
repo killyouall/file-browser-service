@@ -1,0 +1,57 @@
+server:
+#  softNofileLimit: 1000
+  applicationConnectors:
+    - type: http
+      port: 9000
+  adminConnectors:
+    - type: http
+      port: 9001
+
+
+swagger:
+  resourcePackage: org.apache.ambari.views.service.resource
+  title: HDFS file API
+
+
+ambari:
+  host: u1401.ambari.apache.org
+  port: 8080
+  user: admin
+  password: admin
+
+
+
+database:
+  # the name of your JDBC driver
+  driverClass: org.postgresql.Driver
+
+  # the username
+  user: ambari2
+
+  # the password
+  password: bigdata
+
+  # the JDBC URL
+  url: jdbc:postgresql://u1401.ambari.apache.org:5432/ambari
+
+  # any properties specific to your JDBC driver:
+  properties:
+    charSet: UTF-8
+
+  # the maximum amount of time to wait on an empty pool before throwing an exception
+  maxWaitForConnection: 1s
+
+  # the minimum number of connections to keep open
+  minSize: 8
+
+  # the maximum number of connections to keep open
+  maxSize: 32
+
+  # whether or not idle connections should be validated
+  checkConnectionWhileIdle: false
+
+  # the amount of time to sleep between runs of the idle connection validation, abandoned cleaner and idle pool resizing
+  evictionInterval: 10s
+
+  # the minimum amount of time an connection must sit idle in the pool before it is eligible for eviction
+  minIdleTime: 1 minute

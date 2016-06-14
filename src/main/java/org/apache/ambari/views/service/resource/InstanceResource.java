@@ -37,7 +37,7 @@ public class InstanceResource {
             @ApiResponse(code = 200, message = "List of Instances",response = InstanceList.class)})
     @Timed
     public Response list() {
-        return  Response.ok(new InstanceList(Arrays.asList(new Instance("test", "test", "test")))).build();
+        return Response.ok(new InstanceList(dbService.getAllInstances())).build();
     }
 
 

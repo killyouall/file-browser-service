@@ -23,6 +23,8 @@ public class AmbariConfiguration {
     @JsonProperty
     private String password = "admin";
 
+    private String defaultFs;
+
 
     public String getHost() {
         return host;
@@ -39,5 +41,13 @@ public class AmbariConfiguration {
 
     public String getPassword() {
         return password;
+    }
+
+    public String getDefaultFs() {
+        return defaultFs;
+    }
+
+    public void setDefaultFs(String defaultFs) {
+        this.defaultFs = defaultFs;
     }
 }

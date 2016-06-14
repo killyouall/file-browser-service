@@ -2,11 +2,14 @@ package org.apache.ambari.views.service.db;
 
 import com.google.common.base.Optional;
 import com.google.common.base.Preconditions;
+import com.google.common.collect.Lists;
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
 import org.apache.ambari.views.service.api.Instance;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.util.List;
 
 
 public class DbServiceImpl implements DbService {
@@ -37,11 +40,14 @@ public class DbServiceImpl implements DbService {
 
     }
 
-    ;
+    public List<Instance> getAllInstances() {
+        try {
+            return instanceDao.listAll();
+        } catch (Exception e) {
+            return Lists.newArrayList();
+        }
 
-
-
-
+    }
 
 
 }

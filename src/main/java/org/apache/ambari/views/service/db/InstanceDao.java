@@ -6,6 +6,8 @@ import org.skife.jdbi.v2.sqlobject.SqlQuery;
 import org.skife.jdbi.v2.sqlobject.SqlUpdate;
 import org.skife.jdbi.v2.sqlobject.customizers.Mapper;
 
+import java.util.List;
+
 public interface InstanceDao {
 
     @SqlUpdate("insert into fileservice.instance (i_name,i_display_name,i_description," +
@@ -19,4 +21,8 @@ public interface InstanceDao {
     @SqlQuery("select * from fileservice.instance where i_name = :name")
     @Mapper(InstanceMapper.class)
     Instance select(@Bind("name") String instanceId);
+
+    @SqlQuery("select * from fileservice.instance")
+    @Mapper(InstanceMapper.class)
+    List<Instance> listAll();
 }

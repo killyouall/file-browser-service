@@ -18,7 +18,7 @@ ambari:
   port: 8080
   user: admin
   password: admin
-  defaultFs: webhdfs://127.0.0.1:50070
+  defaultFs: webhdfs://localhost:50070
 
 
 
@@ -27,10 +27,10 @@ database:
   driverClass: org.postgresql.Driver
 
   # the username
-  user: arajeev
+  user: docker
 
   # the password
-  password: ""
+  password: "docker"
 
   # the JDBC URL
   url: jdbc:postgresql://localhost:5432/filebrowser
